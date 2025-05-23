@@ -2,20 +2,28 @@ package Creacion;
 
 
 import Nodo.Definicion;
+import com.sun.nio.file.ExtendedWatchEventModifier;
+import java.util.Random;
 import javax.swing.JOptionPane;
 public class Enlace_nodos {
- int i,numero,valor;
+ int i,valor;
  String entrada=" ";
  
  Definicion p,q,cab,aux,aux1;
  public String total;
  public String mostrar= "";
+ public int ultimoValor=0;
+
  public void captura(){
-     cab=null;
-     for(i=0;i<=5;i++){
+
+    // cab = null;
+
+     int cantidad = new Random().nextInt(10)+1;
+   
+     for(i=0;i<=cantidad;i++){
          q=new Definicion();
          if(cab==null){
-             q.num=i;
+             q.num=new Random().nextInt(10)+1;
              q.sig=null;
              p=q;
              cab=q;
@@ -23,7 +31,7 @@ public class Enlace_nodos {
              
          }
          else{
-             q.num=i;
+             q.num=new Random().nextInt(10)+1;
              q.sig=null;
              cab.sig=q;
              cab=q;
@@ -33,6 +41,12 @@ public class Enlace_nodos {
      }
  }// fin del metodo captura
  
+
+
+
+
+
+
  public void impre(){
      aux=p;
      while(aux.sig!=null){
@@ -49,14 +63,30 @@ public class Enlace_nodos {
      entrada=JOptionPane.showInputDialog("Digite el numero a retirar");
      valor=Integer.parseInt(entrada);
      aux=p;
-     while(aux.sig!=null){
-         if(aux.num==valor){
-             aux1.sig=aux.sig;
-         }
+     aux1 = null;
+
+     while(aux!=null && aux.num!=valor){
+         
          aux1=aux;
          aux=aux.sig;
      }
+     if( aux == null){
+            JOptionPane.showMessageDialog(null,"El nodo no existe");
+            return;
+     }
+    
+     if (aux ==p){
+        p =aux.sig;
+        JOptionPane.showMessageDialog(null,"El nodo fue retirado");
+     } else {
+        aux1.sig=aux.sig;
+        JOptionPane.showMessageDialog(null,"El nodo fue retirado");
+     }
+     
      
  }//fin del metodo retiro
- 
+
+
+
+
 }// fin de la clase

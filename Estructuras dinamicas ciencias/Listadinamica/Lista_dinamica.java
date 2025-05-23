@@ -18,7 +18,9 @@ public class Lista_dinamica {
              + "1. Capturar\n" 
              + "2. Imprimir\n"
              + "3. Retirar\n"
-             + "4. Salir\n"));
+             + "5. Salir\n")
+             );
+
        
             switch(op1){
                 case 1:
@@ -30,9 +32,10 @@ public class Lista_dinamica {
                     break;
                 case 3:
                     obj.retiro();
-                    JOptionPane.showMessageDialog(null,"**** NODO RETIRADO *****\n" );
                     obj.impre();
+
                     break;
+                
                 case 4:
                     System.exit(0);
                 
