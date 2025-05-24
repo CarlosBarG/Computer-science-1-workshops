@@ -65,20 +65,23 @@ public class Enlace_nodos {
      aux=p;
      aux1 = null;
 
+     //Buscar nodo
      while(aux!=null && aux.num!=valor){
          
          aux1=aux;
          aux=aux.sig;
      }
+    //si el nodo no existe
      if( aux == null){
             JOptionPane.showMessageDialog(null,"El nodo no existe");
             return;
      }
-    
+     //si el nodo es el primero
      if (aux ==p){
         p =aux.sig;
         JOptionPane.showMessageDialog(null,"El nodo fue retirado");
      } else {
+        //si el nodo no es el primero, enlazamos el nodo anterior con el siguiente
         aux1.sig=aux.sig;
         JOptionPane.showMessageDialog(null,"El nodo fue retirado");
      }
