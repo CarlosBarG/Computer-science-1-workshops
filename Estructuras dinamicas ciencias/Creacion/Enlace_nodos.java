@@ -10,13 +10,12 @@ public class Enlace_nodos {
  String entrada=" ";
  
  Definicion p,q,cab,aux,aux1;
- public String total;
  public String mostrar= "";
- public int ultimoValor=0;
+
 
  public void captura(){
 
-    // cab = null;
+    //cab = null;
 
      int cantidad = new Random().nextInt(10)+1;
    
@@ -27,7 +26,8 @@ public class Enlace_nodos {
              q.sig=null;
              p=q;
              cab=q;
-             total= total + "      " + i;
+            
+
              
          }
          else{
@@ -35,7 +35,7 @@ public class Enlace_nodos {
              q.sig=null;
              cab.sig=q;
              cab=q;
-             total= total + "       " + i;
+             
              
          }
      }

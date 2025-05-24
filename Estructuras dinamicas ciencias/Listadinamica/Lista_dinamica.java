@@ -18,7 +18,7 @@ public class Lista_dinamica {
              + "1. Capturar\n" 
              + "2. Imprimir\n"
              + "3. Retirar\n"
-             + "5. Salir\n")
+             + "4. Salir\n")
              );
 
        
@@ -39,6 +39,8 @@ public class Lista_dinamica {
                 case 4:
                     System.exit(0);
                 
+                
+                    
             }// fin switch
             
         }while(op1<5);
@@ -47,3 +49,4 @@ public class Lista_dinamica {
         
     }
 }
+
